@@ -2,7 +2,7 @@ const accountId = 144553
 let accountEmail = "Aameen@google.com"
 var accountPassword = "12345"
 accountCity = "Jaipur"
-let accountState;
+let accountState; //It will show undefinedq
 
 // accountId = 2 // not allowed
 
