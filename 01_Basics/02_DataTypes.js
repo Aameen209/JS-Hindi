@@ -1,6 +1,6 @@
 "use strict"; // treat all JS code as newer version
 
-// alert( 3 + 3) // we are using nodejs, not browser
+// alert( 3 + 3) // we are using nodejs, not browser, It shows the value after inspecting
 
 console.log(3 
     +
@@ -9,8 +9,8 @@ console.log(3
 console.log("Hitesh")
 
 
-let name = "hitesh"
-let age = 18
+let name = "Aameen"
+let age = 19
 let isLoggedIn = false
 let state;
 
