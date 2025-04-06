@@ -1,4 +1,8 @@
 //  Primitive(Stack) = It gives the copy when calling
+let myCustomer = harryCooper
+let anotherCustomer = myCustomer
+anotherCustomer = "BTOL"
+console.log(anotherCustomer);
 
 //  7 types : String, Number, Boolearn, null, undefined, Symbol, BigInt
 
@@ -14,7 +18,7 @@ console.log(isLoggedIn);         // Output: false
 const outsideTemp = null
 console.log(typeof outsideTemp); // Output: object (typeof null is a JS quirk)
 
-let userEmail;
+let userEmail; //undefined  
 
 const id = Symbol('123')
 console.log(typeof id)           // Output: symbol
@@ -25,8 +29,20 @@ console.log(anotherId)           // Output: Symbol(123) (Symbols are unique)
 // Comparing two symbols
 console.log(id === anotherId);   // Output: false (Symbols are unique)
 
+const bignumber = 3444444445678; // Regular number
+const bignumberN = 3444444445678n; // BigInt
 
-// Reference (Non primitive)(Heap) = It gives the Reference only example : 
+console.log(bignumber); // 3444444445678 (regular number)
+console.log(typeof bignumber); // "number" (type is number)
+
+console.log(bignumberN); // 3444444445678n (BigInt)
+console.log(typeof bignumberN); // "bigint" (type is bigint)
+
+
+
+
+// Reference (Non primitive)(Heap) = It gives the Reference only 
+// Heap Example : 
 let userone = {
     email: "hi@world.com",
     upi: "user@ubl"
@@ -40,12 +56,12 @@ console.log(usertwo.email);     // Output: test@123.com (Both refer to the same 
 
 // Array, Objects, Functions
 
-const heros = ["shaktiman", "naagraj", "doga"];
+const heros = ["shaktiman", "naagraj", "baalveer"];
 let myObj = {
-    name: "Aameen",
+    name: "Aameen", //object
     age: 22,
 }
-console.log(heros);              // Output: ["shaktiman", "naagraj", "doga"] (Array)
+console.log(heros);              // Output: ["shaktiman", "naagraj", "baalveer"] (Array)
 console.log(myObj);              // Output: {name: "Aameen", age: 22} (Object)
 
 console.log(typeof heros);       // Output: object (Arrays are objects in JS)
