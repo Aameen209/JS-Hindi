@@ -53,6 +53,8 @@ const creditcard = true
 const loginfromgoogle = false
 const guestlogin = true
 
+// Logical operators : &&, ||
+
 if (userlogin && creditcard && 2==3){ // &&(and) = aur(Ampersand)
 console.log("Allow to buy");
 }
