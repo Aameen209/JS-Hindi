@@ -8,7 +8,7 @@ const user = {
     }
 }
 user.Welcome()
-user.username = "bro" //
+user.username = "Farzaan" //
 user.Welcome()
 // console.log(this); //Empty {} because we are in node environment and no context in global
 
