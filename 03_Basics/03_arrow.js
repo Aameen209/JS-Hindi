@@ -1,6 +1,6 @@
 const user = {
     username : "Mansab",
-    price : "Free",
+    price : 999,
     Welcome: function(){ //for object we can use this method
         console.log(`${this.username},fREE iN sALE`); //this referes to the current context
         // console.log(this); //this will log Both object user for aameen and khan
@@ -8,7 +8,7 @@ const user = {
     }
 }
 user.Welcome()
-user.username = "Nadeem" //
+user.username = "Farzan" //
 user.Welcome()
 // console.log(this); //Empty {} because we are in node environment and no context in global
 
