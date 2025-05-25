@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Forge Innovations | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //Approach-1
+    function addLanguage(langname) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langname}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("Python")
+    addLanguage("TypeScript")
+    //Approach-2 Both approach have same aim but diff way
+function addOptiLang(langname){
+    const li = document.createElement('li')
+    // const addText = document.createTextNode(langname);
+    // li.appendChild(addText)
+    li.appendChild(document.createTextNode(langname)) // we can do like 24,25 which is exactly Same
+    document.querySelector('.language').appendChild(li)
+}
+addOptiLang("Cypress")
+
+//Edit
+//Ex-1
+const secondlang = document.querySelector("li:nth-child(2)")
+const newli = document.createElement('li')
+newli.textContent = "Gojo"
+secondlang.replaceWith(newli)
+
+//Ex-2
+const thirdlang = document.querySelector("li:first-child")
+thirdlang.outerHTML = '<li>Shahenshah</li>'
+
+//Remove
+const lastlang = document.querySelector("li:last-child")
+lastlang.remove()
+</script>
+</html>
