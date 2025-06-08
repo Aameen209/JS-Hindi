@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('owl')"></li> //this is not good Approach-1
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    document.getElementById('owl').onclick = function(){  //Approach-2 it's ok
+        alert("owl clicked")
+    }
+
+    //  attachEvent()
+    // jQuery - on
+
+    document.getElementById('owl').onclick = function(event) {
+    // // Accessing some of the event properties:
+    // console.log("Event type: " + event.type);  // 'click'
+    // console.log("Timestamp: " + event.timeStamp);  // Time when the event was triggered
+    // console.log("Target element: " + event.target);  // The element the event is dispatched on
+
+    // // Mouse positions
+    // console.log("Mouse X position: " + event.clientX);  // Mouse position relative to the viewport
+    // console.log("Mouse Y position: " + event.clientY);  // Mouse position relative to the viewport
+    // console.log("Screen X position: " + event.screenX);  // Mouse position relative to the screen
+    // console.log("Screen Y position: " + event.screenY);  // Mouse position relative to the screen
+
+    // // Key properties (if it's a keyboard event)
+    // console.log("Alt key pressed: " + event.altKey);  // Whether the Alt key was pressed during the event
+    // console.log("Ctrl key pressed: " + event.ctrlKey);  // Whether the Ctrl key was pressed during the event
+    // console.log("Shift key pressed: " + event.shiftKey);  // Whether the Shift key was pressed during the event
+    // console.log("Shift key pressed: " + event.enterKey);  // Whether the Enter key was pressed during the event
+    // console.log("Enter key pressed: " + (event.key === "Enter"));  // Check if the Enter key was pressed
+
+    // For key events:
+    // console.log("Key code: " + event.keyCode);  // The keyCode of the pressed key (relevant for keyboard events)
+
+    alert("Owl clicked! Check the console for details.");
+};
+document.getElementById('owl').addEventListener('click', function(e){ //Approach-3
+        // console.log(e); 
+    }) // Default False 
+
+//Evennt propagation/ Bubbling up = From inside to outside to track elements in DOM ex= if we click on owl then it's going to images as well
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul"); 
+    }, false) // if make true then it's capturing  instad of bubbling
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        // console.log("owl clicked");
+        // e.stopPropagation() //if event propagation is stopped then only owl is clicked/showing
+    }, false) // if make true then it's event capturing instad of event bubbling
+    
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault();
+        // e.stopPropagation()
+        console.log("google clicked");
+    }, false)
+   
+    
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    
+        
+    })
+    
+    removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
